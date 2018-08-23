@@ -32,7 +32,6 @@ public class SegmenterTest {
     private static final String s7 = "2016年，中国经济向“新常态”深度调整和转型，对金融业而言更是深刻变革、充满挑战的一年。我们保持一贯以来的稳健增长步伐，实现了持续领先市场的发展。2016年，平安实现净利润723.68亿元，同比增长11%，归属于母公司股东的净利润623.94亿元，同比增长15.1%；截至2016年12月31日，归属于母公司股东权益为3834.49亿元，较2015年底增长14.7%。同时，平安跻身《财富》世界500强前50名。截至2016年12月31日，平安的市值位居全球上市公司第57名、金融集团第15名、保险集团第1名";
 
 
-
     @Test
     public void doTest1() {
         List<Term> taggedWords = Segmenter.INSTANCE.split(s3);
@@ -52,7 +51,7 @@ public class SegmenterTest {
     }
 
     @Test
-    public void doTest4(){
+    public void doTest4() {
         /*List<Term> t = new DAG(s3).splitByPath();
         t.forEach(w -> System.out.print(w.word + ", "));
         List<Term> taggedWords = Segmenter.dp(s3);
@@ -60,7 +59,7 @@ public class SegmenterTest {
     }
 
     @Test
-    public void doTest5(){
+    public void doTest5() {
         List<Term> taggedWords = Segmenter.INSTANCE.split(s2);
         taggedWords.forEach(w -> System.out.print(w.getWord() + "_"));
     }

@@ -60,6 +60,7 @@ class WordNet(val sentence: String, fromSentence: Boolean = true) {
         val freqFactor = dSmoothingPara * freq / (CoreDict.dat.totalFrequency)
         val ngramFactor = (1 - dSmoothingPara) * ((1 - dTemp) * nTwoWordsFreq / freq + dTemp)
         val w = maxWeight + Math.abs(-Math.log(freqFactor + ngramFactor))
+        println("tem: $term w: $w")
         return w
     }
 
@@ -95,7 +96,7 @@ class WordNet(val sentence: String, fromSentence: Boolean = true) {
                 nodes[followIndex].addAll(target)
             }
 
-            (followIndex + 1..nodes.size - 1).forEach followTermLoop@ { j ->
+            (followIndex + 1 until nodes.size).forEach followTermLoop@ { j ->
                 if (nodes[j].size > 0) return@followTermLoop
                 val first = (if (wordNetOrigin.nodes[j].size > 0) wordNetOrigin.nodes[j][0] else null) ?: return@followTermLoop
                 nodes[j].add(first)
@@ -105,7 +106,7 @@ class WordNet(val sentence: String, fromSentence: Boolean = true) {
 
     }
 
-    private fun initNodes(): Unit {
+    private fun initNodes() {
         //根据词库构建
         for (i in 0 until sentence.length) {
             for (k in (i + 1)..sentence.length) {
@@ -189,15 +190,16 @@ data class WordAttribute(val frequency: Int, val natures: Map<Nature, Int>)
 
 fun main(args: Array<String>) {
     val s1 = "碧桂园做事靠谱，理性，而恒大的老许像个疯子，29元还接盘万科，12元收购盛京银行，100亿香港买楼"
+    val s2 = "南京市长江大桥"
     val s5 = "万科股权之争的故事发展令人应接不暇。从证监会刘主席指斥“妖精”、证监会、保监会联手祭出一堆处罚开始，又是华润将股份转让给深铁，3月16日又是中国恒大集团十家下属企业把所持的股东表决权、提案权及股东大会参会权不可撤销地委托给深铁。深铁行权份额高达29.38%，站在了要约收购的边上。此时，离万科于3月24日召开董事会会议只有一周时间。"
 
     val s6 = "first, 叀叁参叄叅, 优酷总裁魏明介绍了优酷2015年的内容战略，表示要以“大电影、大网剧、大综艺”为关键词"
 
-    val wn = WordNet(s6)
-    println("WordNet: " + wn)
+    val wn = WordNet(s2)
+    println("WordNet: $wn")
     val r = wn.calculateRoute()
     r.forEach { t ->
-        print(s6.substring(t.startIndex, t.endIndex + 1))
+        print(s2.substring(t.startIndex, t.endIndex + 1))
         print("_")
     }
 }

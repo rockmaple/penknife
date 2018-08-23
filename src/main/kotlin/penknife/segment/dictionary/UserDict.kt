@@ -10,7 +10,7 @@ import java.util.logging.Logger
 
 object UserDict {
 
-    val path = "dictionary/userDict.txt"
+    private const val path = "dictionary/userDict.txt"
     val dat = UserDictDat()
 
     init {

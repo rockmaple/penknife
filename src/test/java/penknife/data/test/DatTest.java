@@ -5,7 +5,6 @@ import com.google.common.base.Stopwatch;
 import com.google.common.io.CharStreams;
 import com.google.common.io.LineProcessor;
 import com.google.common.io.Resources;
-import org.junit.Test;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -14,14 +13,12 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import static org.junit.Assert.assertTrue;
-
 public class DatTest {
 
     private static final Logger logger = Logger.getLogger(DatTest.class.getName());
 
     //@Test
-    public void doTest0() throws Exception{
+    public void doTest0() throws Exception {
         InputStream in = Resources.getResource("dictionary/CoreNatureDictionary.txt").openStream();
         Dat dat = DatMaker.readFromInputStream(in);
         int length = dat.dat.length;
@@ -37,7 +34,7 @@ public class DatTest {
         for (String line : lines) {
             final int match = dat.match(line);
             //logger.info("line: " + line + " index: " + match);
-            if(match >maxIndex){
+            if (match > maxIndex) {
                 maxIndex = match;
             }
         }
@@ -91,13 +88,13 @@ public class DatTest {
                     ex.printStackTrace();
                 }*/
             }
-        }catch (IOException e) {
+        } catch (IOException e) {
             logger.log(Level.SEVERE, "failed to load default dict", e);
         }
     }
 
     //@Test
-    public void doTest2(){
+    public void doTest2() {
         try (
                 InputStream buffer = new BufferedInputStream(Resources.getResource("dat.ser").openStream());
                 ObjectInput input = new ObjectInputStream(buffer)

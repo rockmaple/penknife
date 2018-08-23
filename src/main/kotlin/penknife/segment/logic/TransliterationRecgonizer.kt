@@ -17,7 +17,7 @@ object TransliterationRecgonizer {
                 } else {
 
                     if (result.size > 1) {
-                        val value = result.map { it.word }.joinToString("")
+                        val value = result.joinToString("") { it.word }
                         val startIndex = result[0].startIndex
                         val endIndex = result.last().endIndex
                         wordNetOptimized.addTermsToWordNetOptimized(listOf(Term(value, startIndex, endIndex, WordAttribute(1000, mapOf(Nature.nrf to 1000)))), wordNetOrigin)

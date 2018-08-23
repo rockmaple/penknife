@@ -1,9 +1,9 @@
 package penknife.classification.bayes
 
-import penknife.util.RealVectorExt.getLength
-import penknife.util.RealVectorExt.sparseForEachIndexed
 import org.apache.commons.math3.linear.*
 import org.apache.commons.math3.util.FastMath
+import penknife.util.RealVectorExt.getLength
+import penknife.util.RealVectorExt.sparseForEachIndexed
 
 object MultinomialNaiveBayes {
 

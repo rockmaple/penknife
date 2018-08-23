@@ -133,6 +133,7 @@ public abstract class DoubleArrayTrie<V> implements Serializable {
 
     /**
      * 字符串的前n个字符是否在词典中
+     *
      * @param key
      * @return
      */

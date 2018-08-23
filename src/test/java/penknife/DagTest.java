@@ -1,10 +1,5 @@
 package penknife;
 
-import org.junit.Test;
-import penknife.segment.logic.Term;
-
-import java.util.List;
-
 public class DagTest {
 
 

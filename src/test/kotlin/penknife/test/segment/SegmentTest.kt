@@ -20,7 +20,7 @@ class SegmentTest {
     }
 
     @Test
-    fun doTest2(){
+    fun doTest2() {
         val result = Segmenter.split(s2)
         result.forEach { w ->
             val word = w.word

@@ -14,7 +14,7 @@ public class HmmTest {
     @Test
     public void doTest() {
         List<Term> words = HMM.Companion.create().split(s3);
-        words.forEach(w-> System.out.print(w.getWord() + "_"));
+        words.forEach(w -> System.out.print(w.getWord() + "_"));
     }
 
 }

@@ -49,9 +49,9 @@ object PersonDict {
         val resultTerms = result.map { it.first }
         val hits = trie.parseText(pattern)
 
-        return hits.fold(mutableListOf<Term>()) { result, hit ->
+        return hits.fold(mutableListOf()) { result, hit ->
 
-            val parsedName = resultTerms.subList(hit.begin, hit.end).map { it.word }.joinToString("")
+            val parsedName = resultTerms.subList(hit.begin, hit.end).joinToString("") { it.word }
 
             if (!isBadCase(parsedName) && !(hit.value == NRPattern.BCD && parsedName[0] == parsedName[2])) {
                 val beginTerm = resultTerms[hit.begin]

@@ -20,7 +20,7 @@ public class CleanProcessorTest {
 
 
     @Test
-    public void doTest1(){
+    public void doTest1() {
         CleanProcessor cleanProcessor = new CleanProcessor();
         String s1 = cleanProcessor.process(s2);
         /*Segmenter.dp(s1);*/

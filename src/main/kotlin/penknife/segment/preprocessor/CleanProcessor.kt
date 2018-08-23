@@ -4,7 +4,7 @@ import penknife.segment.preprocess.CleanProcessor
 
 object CleanProcessor : AbstractPreprocessor() {
 
-    val delegate = CleanProcessor()
+    private val delegate = CleanProcessor()
 
     override fun process(sentence: String): String {
         return delegate.process(sentence)

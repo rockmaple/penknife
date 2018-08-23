@@ -2,8 +2,9 @@ package penknife.segment.dictionary;
 
 /**
  * 词性
- * @see https://github.com/hankcs/HanLP/blob/master/src/main/java/com/hankcs/hanlp/corpus/tag/Nature.java
+ *
  * @author hankcs
+ * @see https://github.com/hankcs/HanLP/blob/master/src/main/java/com/hankcs/hanlp/corpus/tag/Nature.java
  */
 public enum Nature {
     /**
@@ -746,9 +747,7 @@ public enum Nature {
     /**
      * 仅用于始##始，不会出现在分词结果中
      */
-    begin,
-
-    ;
+    begin,;
 
     /**
      * 词性是否以该前缀开头<br>

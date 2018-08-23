@@ -37,7 +37,7 @@ public class T2SProcessor {
     private String convertT2S(String sentence) {
         int[] codePoints = StringUtils.toCodePoints(sentence);
         StringBuilder sb = new StringBuilder();
-        for (int codePoint : codePoints){
+        for (int codePoint : codePoints) {
             sb.appendCodePoint(this.getSimplifiedCodePoint(codePoint));
         }
         return sb.toString();

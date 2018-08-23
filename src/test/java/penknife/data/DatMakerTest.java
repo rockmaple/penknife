@@ -1,18 +1,11 @@
 package penknife.data;
 
-import com.google.common.base.Charsets;
-import com.google.common.io.CharStreams;
-import com.google.common.io.Resources;
 import org.junit.Test;
-//import penknife.segment.util.dat.Dat;
-//import penknife.segment.util.dat.DatMaker;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.List;
 
-import static org.junit.Assert.assertTrue;
+//import penknife.segment.util.dat.Dat;
+//import penknife.segment.util.dat.DatMaker;
 
 public class DatMakerTest {
     @Test
@@ -30,7 +23,7 @@ public class DatMakerTest {
     }
 
     //@Test
-    public void test1() throws Exception{
+    public void test1() throws Exception {
         /*DatMaker datMaker = new DatMaker();
         DictItem item1 = new DictItem("天空", 2, "n");
         DictItem item2 = new DictItem("海洋", 2, "n");

@@ -19,7 +19,7 @@ object NRDict {
         dat.loadDataFromDat(path)
     }
 
-    fun get(key: String): EnumItem<NR>?{
+    fun get(key: String): EnumItem<NR>? {
         return dat.get(key)
     }
 
@@ -43,7 +43,7 @@ class NRDictDat : DoubleArrayTrie<EnumItem<NR>>() {
             var index = 0
             val size = data[index++]
             val valueArray = arrayOfNulls<EnumItem<NR>>(size)
-            
+
             (0 until size).forEach { i ->
                 val currentSize = data[index++]
                 val item = EnumItem<NR>()

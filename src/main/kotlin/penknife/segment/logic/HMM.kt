@@ -21,7 +21,7 @@ class HMM {
         }
     }
 
-    val states = listOf('B', 'M', 'E', 'S')
+    private val states = listOf('B', 'M', 'E', 'S')
     val startP: MutableMap<Char, Double> = mutableMapOf()
     val transP: Table<Char, Char, Double> = HashBasedTable.create()
     var emitP: Table<Char, Char, Double> = HashBasedTable.create()
@@ -73,7 +73,7 @@ class HMM {
             weightMatrix.put(0, state, v)
         }
 
-        for(i in 1 until input.length){
+        for (i in 1 until input.length) {
             states.forEach { state ->
                 //发射概率
                 val emp = emitP.get(state, input[i]) ?: MIN_VALUE
@@ -160,7 +160,7 @@ class HMM {
 
     }
 
-    fun initValues() {
+    private fun initValues() {
 
         prevStatus.put('B', charArrayOf('E', 'S'))
         prevStatus.put('M', charArrayOf('M', 'B'))
