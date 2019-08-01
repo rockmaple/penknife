@@ -35,7 +35,7 @@ class UserDictDat : DoubleArrayTrie<WordAttribute>() {
 
     val logger = Logger.getLogger("penknife.segment.dictionary.UserDictDat")!!
 
-    override fun loadDataFromTxt(path: String?) {
+    override fun loadDataFromTxt(path: String) {
         val wordToAttributeMap = TreeMap<String, WordAttribute>()
         BufferedReader(InputStreamReader(Resources.getResource(path).openStream(), Charsets.UTF_8)).forEachLine { line ->
             val splitted = line.split("\\s".toRegex())
