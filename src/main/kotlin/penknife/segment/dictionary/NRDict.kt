@@ -33,7 +33,7 @@ class NRDictDat : DoubleArrayTrie<EnumItem<NR>>() {
 
         val stopWatch = Stopwatch.createStarted()
 
-        Files.newByteChannel(Paths.get(Resources.getResource(path + ".value.dat").file)).use { channel ->
+        Files.newByteChannel(Paths.get(Resources.getResource("$path.value.dat").file)).use { channel ->
             val data = IntArray(channel.size().toInt().shr(2))
             val bb = ByteBuffer.allocateDirect(64 * 1024)
             BufferUtils.readInts(channel, bb, data)
@@ -50,7 +50,7 @@ class NRDictDat : DoubleArrayTrie<EnumItem<NR>>() {
                 (0 until currentSize).forEach { _ ->
                     val nr = nrArray[data[index++]]
                     val freq = data[index++]
-                    item.labelMap.put(nr, freq)
+                    item.labelMap[nr] = freq
                 }
                 valueArray[i] = item
             }
@@ -79,5 +79,5 @@ class NRDictDat : DoubleArrayTrie<EnumItem<NR>>() {
 
 fun main(args: Array<String>) {
     val v = NRDict.dat.get("12")
-    println("v: " + v)
+    println("v: $v")
 }

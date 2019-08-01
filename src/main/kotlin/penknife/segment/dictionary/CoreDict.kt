@@ -104,6 +104,6 @@ class CordDictDat : DoubleArrayTrie<WordAttribute>() {
 
 fun main(args: Array<String>) {
     val attr = CoreDict.getAttribute("关键词")
-    println("attr: " + attr)
+    println("attr: $attr")
     //CoreDict.saveToDatFile("coreDict.dat")
 }

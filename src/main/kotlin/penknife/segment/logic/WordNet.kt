@@ -8,7 +8,7 @@ import java.util.*
 
 class WordNet(val sentence: String, fromSentence: Boolean = true) {
 
-    val nodes = Array<MutableList<Term>>(sentence.length, { mutableListOf() })
+    val nodes = Array<MutableList<Term>>(sentence.length) { mutableListOf() }
 
     val dSmoothingPara = 0.1
 
